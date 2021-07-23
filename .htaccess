@@ -1,0 +1,13 @@
+RewriteEngine ON
+
+RewriteRule ^home?$ index.php 
+
+RewriteRule ^post/([0-9]+) single.php?id=$1
+
+ErrorDocument 404 /blogku/error.php
+
+
+
+
+
+

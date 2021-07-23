@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.tinggi-maks{
+    max-width: 100%;
+    padding: 0 80px;
+    margin: auto;
+}
+
+/* navbar styling */
+.navigasi{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navigasi.sticky{
+    padding: 5px 0;
+    background: white;
+}
+.navigasi .tinggi-maks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigasi .logoku a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+	text-decoration: none;
+}
+.navigasi .logoku a span{
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.navigasi.sticky .logoku a{
+    color: crimson;
+}
+.navigasi.sticky .logoku a span{
+    color: black;
+}
+.navigasi .pesanan li{
+    list-style: none;
+    display: inline-block;
+    
+}
+.navigasi .pesanan li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+	text-decoration: none;
+}
+.navigasi .pesanan li a:hover{
+    color: crimson;
+}
+.navigasi.sticky .pesanan li a{
+    color: black;
+}
+.navigasi.sticky .pesanan li a:hover{
+    color: crimson;
+}
+
+/* Navigasi kotak cari */
+.navigasi .icon-cari{
+    color: white;
+    background: transparent;
+    font-size: 15px;
+    line-height: 70px;
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.navigasi.sticky .icon-cari{
+    color: black;
+}
+
+.navigasi .kotak-cari{
+    position: absolute;
+    height: 40%;
+    max-width: calc(100% - 50px);
+    width: 85%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.navigasi #centang:checked ~ .icon-cari i::before{
+    content: "\f00d";
+  }
+
+.navigasi #centang:checked ~ .kotak-cari{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+.navigasi input[type="checkbox"]{
+    display: none;
+}
+  
+.kotak-cari input{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: white;
+    background: #171922;
+}
+
+
+.kotak-cari input::placeholder{
+    color: white;
+}
+
+.kotak-cari .ayo-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 60px;
+    width: 70px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.kotak-cari.sticky .ayo-icon{
+    color: #171922;
+}
+.kotak-cari.sticky input::placeholder{
+    color: black;
+}
+.kotak-cari.sticky input[type="text"]{
+    color: black;
+}
+.kotak-cari.sticky input{
+    background: white;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-btn.sticky{
+    color: #171922;
+}
+
+.scroll-atas-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-atas-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-atas-btn:hover{
+    filter: brightness(90%);
+}
+
+/* Home */
+.rumah .tinggi-maks{
+    margin: auto 0 auto 40px
+}
+
+.rumah .home-content .text-1{
+    font-size: 27px;
+}
+
+.rumah .home-content .text-2{
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.rumah .home-content .text-3{
+    font-size: 27px;
+    margin: 5px 0;
+}
+.rumah .home-content .text-3 span{
+    color: #F13638;
+    font-weight: 500;
+}
+.rumah .home-content a{
+    display: inline-block;
+    background: #F13638;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #F13638;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.rumah .home-content a:hover{
+    color: white;
+    background: none;
+    border: 2px solid white;
+}
+
+/* about section styling */
+.tentang, .layanan{
+    font-family: 'Poppins', sans-serif;
+}
+
+.tentang .tentang-content,
+.layanan .layanan-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tentang .judul::after{
+    content: "Siapa aku";
+}
+
+.tentang .tentang-content .kiri{
+    width: 45%;
+}
+.tentang .tentang-content .kiri img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.tentang .tentang-content .kanan{
+    width: 55%;
+}
+.tentang .tentang-content .kanan .teks{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.tentang .tentang-content .kanan .teks span{
+    color: crimson;
+}
+.tentang .tentang-content .kanan p{
+    text-align: justify;
+}
+.tentang .tentang-content .kanan a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.tentang .tentang-content .kanan a:hover{
+    color: crimson;
+    background: none;
+}
+
+/* Layanan */
+/* services section styling */
+.layanan{
+    color:#fff;
+    background: #111;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+
+.layanan .judul::before{
+    background: #fff;
+}
+.layanan .judul::after{
+    background: #111;
+    content: "saya bisa";
+}
+
+.layanan .layanan-content .kartu{
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.layanan .layanan-content .kartu:hover{
+    background: crimson;
+}
+.layanan .layanan-content .kartu .kotak{
+    transition: all 0.3s ease;
+}
+.layanan .layanan-content .kartu:hover .kotak{
+    transform: scale(1.05);
+}
+.layanan .layanan-content .kartu i{
+    font-size: 50px;
+    color: crimson;
+    transition: color 0.3s ease;
+}
+.layanan .layanan-content .kartu:hover i{
+    color: #fff;
+}
+.layanan .layanan-content .kartu .teks{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 1104px){
+    .rumah .tinggi-maks{
+        margin-left: 0px;
+    }
+    .wrapper .search-box{
+        max-width: calc(100% - 100px);
+    }
+    .wrapper .search-box input{
+        padding: 0 100px 0 15px;
+    }
+    .tentang .tentang-content .kiri img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 1077px){
+    .tentang .tentang-content .kiri{
+        display: flex;
+        flex: 100%;
+        justify-content: center;
+    }
+    .tentang .tentang-content .kanan{
+        flex: 100%;
+    }
+}
+
+@media (max-width: 991){
+    .tinggi-maks{
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px){
+	.tinggi-maks{
+		padding: 0 50px;
+	}
+
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+
+    .menu-btn.sticky i.active:before{
+        color: white;
+    }
+
+    .navigasi.sticky .pesanan li a{
+        color: white;
+    }
+
+    .navigasi .pesanan{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navigasi .pesanan.active{
+        left: 0;
+    }
+    .navigasi .pesanan li{
+        display: block;
+    }
+    .navigasi .pesanan li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .rumah .home-content .text-2{
+        font-size: 70px;
+    }
+
+    .rumah .home-content .text-3{
+        font-size: 35px;
+    }
+
+    .rumah .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .tentang .tentang-content .kolom{
+        width: 100%;
+    }
+    .tentang .tentang-content .kiri{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .tentang .tentang-content .kanan{
+        flex: 100%;
+    }
+
+    .layanan .layanan-content .kartu{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 690px){
+	.tinggi-maks{
+		padding: 0 23px;
+	}
+
+    .rumah .home-content .text-2{
+        font-size: 60px;
+    }
+    .rumah .home-content .text-3{
+        font-size: 32px;
+    }
+
+    .home .home-content a{
+        font-size: 20px;
+    }
+
+    .layanan .layanan-content .kartu{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+    .rumah .home-content .text-2{
+        font-size: 50px;
+    }
+    .rumah .home-content .text-3{
+        font-size: 27px;
+    }
+    .tentang .tentang-content .kanan .text{
+        font-size: 19px;
+    }
+
+    .scroll-atas-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
+@media (max-width: 360px){
+
+    .scroll-atas-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
+.tinggi-maks{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.rumah{
+    display: flex;
+    background: url("assets/wp2757874.gif") no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .judul{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section .judul::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .judul::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
